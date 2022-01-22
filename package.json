@@ -1,0 +1,37 @@
+{
+	"name": "store_test_project",
+	"version": "1.0.0",
+	"description": "",
+	"main": "dist/main.js",
+	"scripts": {
+		"build": "tsc && docker build . -t vzlomed/products && docker image prune -f && docker-compose up -d",
+		"start:dev": "nodemon",
+		"start:prod": "node -r ts-node/register/transpile-only -r tsconfig-paths/register ./dist/app/main.js",
+		"start": "ts-node src/index.ts",
+		"typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"body-parser": "^1.19.1",
+		"class-transformer": "^0.5.1",
+		"class-validator": "^0.13.2",
+		"dotenv": "^12.0.3",
+		"express": "^4.17.2",
+		"image-size": "^1.0.1",
+		"joi": "^17.5.0",
+		"mysql": "^2.14.1",
+		"pg": "^8.7.1",
+		"reflect-metadata": "^0.1.10",
+		"tsconfig-paths": "^3.12.0",
+		"typeorm": "0.2.41",
+		"uuid": "^8.3.2",
+		"ts-node": "^10.4.0"
+	},
+	"devDependencies": {
+		"@types/express": "^4.17.13",
+		"@types/node": "^17.0.8",
+		"@types/uuid": "^8.3.4",
+		"typescript": "^4.5.4"
+	}
+}

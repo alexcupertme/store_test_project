@@ -1,0 +1,29 @@
+version: "3"
+services:
+  app:
+    image: vzlomed/products:latest
+    networks:
+      - app_network
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    ports:
+      - "80:8000"
+  postgres:
+    image: postgres
+    networks:
+      - app_network
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data/postgresql:/bitnami/postgresql
+networks:
+  app_network:
+volumes:
+  redis_data:
+  mongo:

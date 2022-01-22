@@ -1,0 +1,39 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"declaration": true,
+		"removeComments": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"sourceMap": true,
+		"outDir": "./dist",
+		"target": "es2020",
+		"baseUrl": "./src",
+		"rootDir": "./src",
+		"moduleResolution": "node",
+		"skipLibCheck": true,
+		"strictNullChecks": false,
+		"strict": true,
+		"noImplicitAny": false,
+		"esModuleInterop": true,
+		"strictBindCallApply": false,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": false,
+		"paths": {
+			"@infrastructure/*": ["infrastrucutre/*"],
+			"@core/*": ["core/*"],
+			"@dto/*": ["infrastructure/interface/dto/*"],
+			"@interface/*": ["infrastructure/interface/*"],
+			"@constants": ["core/constants"],
+			"@factory": ["infrastructure/factory"],
+			"@domain/*": ["domain/*"],
+			"@repository/*": ["infrastructure/repository/*"],
+			"@schema/*": ["infrastructure/schema/*"],
+			"@controller/*": ["infrastructure/controller/*"]
+		},
+		"allowJs": true,
+		"resolveJsonModule": true,
+		"noUnusedLocals": true
+	}
+}
